@@ -9,9 +9,3 @@ export const removeTodo = (text) => ({
   type: REMOVE_TODO,
   payload: { text },
 });
-
-export const UPDATE_TODO = "UPDATE_TODO";
-export const updateTodo = (text) => ({
-  type: UPDATE_TODO,
-  payload: { text },
-});
