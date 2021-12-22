@@ -10,6 +10,7 @@ const TodoList = ({ todos = [], onRemovePressed, onCompletePressed }) => (
     <NewTodoForm />
     {todos.map((todo) => (
       <TodoListItem
+        key={todo.text}
         todo={todo}
         onRemovePressed={onRemovePressed}
         onCompletePressed={onCompletePressed}

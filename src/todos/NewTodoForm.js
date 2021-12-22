@@ -5,7 +5,6 @@ import { createTodo } from "./actions";
 
 const NewTodoForm = ({ todos, onCreatePressed }) => {
   const [inputValue, setInputValue] = useState("");
-  console.log("this is test");
   return (
     <div className="new-todo-form">
       <input
