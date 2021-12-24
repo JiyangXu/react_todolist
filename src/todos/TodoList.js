@@ -3,7 +3,6 @@ import TodoListItem from "./TodoListItem";
 import NewTodoForm from "./NewTodoForm";
 import "./TodoList.css";
 import { connect } from "react-redux";
-import { completeTodo } from "./actions";
 import { loadTodos, removeTodoRequest, completeTodoRequest } from "./thunks";
 
 const TodoList = ({

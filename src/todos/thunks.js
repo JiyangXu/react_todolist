@@ -4,6 +4,7 @@ import {
   LoadTodosFailure,
   createTodo,
   removeTodo,
+  completeTodo,
 } from "./actions";
 
 export const loadTodos = () => async (dispatch, getState) => {
@@ -50,13 +51,14 @@ export const removeTodoRequest = (id) => async (dispatch) => {
 
 export const completeTodoRequest = (id) => async (dispatch) => {
   try {
-    const response = await fetch(`http://localhost:8080/todos/${id}/complete`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body,
-    });
+    const response = await fetch(
+      `http://localhost:8080/todos/${id}/completed`,
+      {
+        method: "POST",
+      }
+    );
+    const updateTodo = await response.json();
+    dispatch(completeTodo(updateTodo));
   } catch (e) {
     dispatch(displayAlert(e));
   }
